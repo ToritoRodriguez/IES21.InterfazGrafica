@@ -1,0 +1,68 @@
+create table personas(
+    id int AUTO_INCREMENT,
+    nombre varchar(45) NOT NULL,
+    apellido varchar(45) NOt NULL,
+    dni int Not NULL,
+    telefono varchar(30),
+    email varchar(55),
+    PRIMARY  KEY (id));
+    
+    create table clientes(
+        id int AUTO_INCREMENT,
+        id_persona int NOT NULL,
+        codigo varchar(25) NOT NULL,
+        cuil varchar(14),
+        PRIMARY KEY(id),
+        FOREIGN KEY (id_persona) REFERENCES personas(id));
+    
+    create TABLE vendedores(
+        id int AUTO_INCREMENT,
+        id_persona int NOT NULL,
+        codigo varchar(25) NOT NULL,
+        sucursal varchar(20),
+        PRIMARY KEY (id),
+        FOREIGN KEY (id_persona) REFERENCES personas(id));
+        
+        CREATE TABLE proveedores(
+            id int AUTO_INCREMENT,
+            id_persona int NOT NULL,
+            codigo varchar(25) NOT NULL,
+            nombre_fantasia varchar(45),
+            cuit varchar(14) NOT NULL,
+            PRIMARY KEY (id),
+            FOREIGN KEY (id_persona) REFERENCES personas(id));
+            
+            CREATE TABLE categorias(
+                id int AUTO_INCREMENT,
+                categoria varchar(20) NOT NULL,
+                tipo varchar(10) NOT NULL,
+                PRIMARY KEY (id));
+                
+             CREATE TABLE marcas(
+                 id int AUTO_INCREMENT,
+                 marca varchar(30) NOT NULL,
+                 codigo varchar(10) NOT NULL,
+                 PRIMARY KEY (id));
+                 
+             CREATE TABLE modelos(
+                 id int AUTO_INCREMENT,
+                 id_marca int NOT NULL,
+                 modelo varchar(15) NOT NULL,
+                 descripcion text NOT NULL,
+                 rodado varchar(15),
+                 PRIMARY KEY (id),
+                 FOREIGN KEY (id_marca) REFERENCES marcas(id));
+                 
+              CREATE TABLE productos(
+                  id int AUTO_INCREMENT,
+                  id_categoria int NOT NULL,
+                  id_modelo int NOT NULL,
+                  id_producto int,
+                  id_proveedor int NOT NULL,
+                  precio numeric(18,2),
+                  path_imagen text,
+                  PRIMARY KEY(id),
+                  FOREIGN KEY(id_categoria) REFERENCES categorias(id),
+                  FOREIGN KEY (id_modelo) REFERENCES modelos(id),
+                  FOREIGN KEY (id_producto) REFERENCES productos(id),
+                  FOREIGN KEY (id_proveedor) REFERENCES proveedores(id));

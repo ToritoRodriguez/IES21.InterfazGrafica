@@ -1,0 +1,109 @@
+-- Creamos la tabla personas
+CREATE TABLE personas (
+    id INT AUTO_INCREMENT,
+    nombre VARCHAR(45) NOT NULL,
+    apellido VARCHAR(45) NOT NULL,
+    dni VARCHAR(20) NOT NULL,
+    telefono VARCHAR(30),
+    email VARCHAR(55),
+    PRIMARY KEY (id)
+);
+
+-- Creamos la tabla clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT,
+    id_persona INT NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    cuil VARCHAR(14),
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_persona) REFERENCES personas(id)
+);
+
+-- Modificamos la tabla vendedores
+CREATE TABLE vendedores (
+    id INT AUTO_INCREMENT,
+    id_persona INT NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    sucursal VARCHAR(20),
+    cuit VARCHAR(14), 
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_persona) REFERENCES personas(id)
+);
+
+-- Creamos la tabla proveedores
+CREATE TABLE proveedores (
+    id INT AUTO_INCREMENT,
+    id_persona INT NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    nombre_fantasia VARCHAR(45),
+    cuit VARCHAR(14) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_persona) REFERENCES personas(id)
+);
+
+-- Creamos la tabla categorias
+CREATE TABLE categorias (
+    id INT AUTO_INCREMENT,
+    codigo VARCHAR(25) NOT NULL,
+    categoria VARCHAR(20) NOT NULL,
+    tipo VARCHAR(10) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+-- Creamos la tabla marcas
+CREATE TABLE marcas (
+    id INT AUTO_INCREMENT,
+    codigo VARCHAR(25) NOT NULL,
+    marca VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+-- Creamos la tabla modelos
+CREATE TABLE modelos (
+    id INT AUTO_INCREMENT,
+    codigo_marca VARCHAR(25) NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    modelo VARCHAR(15) NOT NULL,
+    descripcion TEXT NOT NULL,
+    rodado VARCHAR(15),
+    PRIMARY KEY (id)
+);
+
+-- Creamos la tabla productos
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT,
+    codigo_categoria VARCHAR(25) NOT NULL,
+    codigo_modelo VARCHAR(25) NOT NULL,
+    codigo_proveedor VARCHAR(25) NOT NULL,
+    codigo_marca VARCHAR(25) NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    cantidad INT NOT NULL,
+    nombre TEXT NOT NULL,
+    descripcion TEXT NOT NULL,
+    precio NUMERIC(18,2),
+    path_imagen TEXT,
+    PRIMARY KEY (id)
+);
+
+-- Creamos la tabla pedido
+CREATE TABLE pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    codigo_vendedor VARCHAR(25) NOT NULL,
+    codigo_cliente VARCHAR(25) NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    total_pedido DECIMAL(10, 2) NOT NULL     
+);
+
+-- Creamos la tabla Detalle_Pedido
+CREATE TABLE detalle_pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_pedido VARCHAR(25) NOT NULL,
+    codigo_producto VARCHAR(25) NOT NULL,
+    codigo VARCHAR(25) NOT NULL,
+    cantidad INT NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,   
+    descuento INT DEFAULT NULL,      
+    total DECIMAL(10, 2) NOT NULL
+);

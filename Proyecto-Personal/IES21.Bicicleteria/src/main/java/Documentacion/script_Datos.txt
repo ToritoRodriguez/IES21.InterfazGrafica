@@ -1,0 +1,169 @@
+-- Insertar en personas
+INSERT INTO personas (nombre, apellido, dni, telefono, email) VALUES
+('Juan', 'Perez', '12345678', '123-456-789', 'juan.perez@example.com'),
+('Ana', 'Gomez', '87654321', '987-654-321', 'ana.gomez@example.com'),
+('Carlos', 'Lopez', '11223344', '456-789-123', 'carlos.lopez@example.com'),
+('Maria', 'Rodriguez', '44332211', '321-654-987', 'maria.rodriguez@example.com'),
+('Luis', 'Fernandez', '55667788', '654-321-456', 'luis.fernandez@example.com'),
+('Laura', 'Martinez', '99887766', '789-123-456', 'laura.martinez@example.com'),
+('Diego', 'Hernandez', '66554433', '147-258-369', 'diego.hernandez@example.com'),
+('Sofia', 'Garcia', '33221144', '369-258-147', 'sofia.garcia@example.com'),
+('Miguel', 'Diaz', '77441122', '753-951-852', 'miguel.diaz@example.com'),
+('Elena', 'Ruiz', '22334455', '852-951-753', 'elena.ruiz@example.com'),
+('Fernando', 'Torres', '88776655', '321-123-456', 'fernando.torres@example.com'),
+('Camila', 'Sanchez', '11224488', '654-789-321', 'camila.sanchez@example.com'),
+('Javier', 'Moreno', '33445566', '951-753-852', 'javier.moreno@example.com'),
+('Valeria', 'Diaz', '55667744', '789-456-123', 'valeria.diaz@example.com'),
+('Alejandro', 'Ramos', '22334477', '123-852-456', 'alejandro.ramos@example.com'),
+('Paula', 'Castro', '66778899', '147-369-258', 'paula.castro@example.com'),
+('Ricardo', 'Mendez', '88997766', '951-456-321', 'ricardo.mendez@example.com'),
+('Andrea', 'Gutierrez', '11223377', '753-852-951', 'andrea.gutierrez@example.com'),
+('Marcos', 'Ortiz', '33441155', '369-147-258', 'marcos.ortiz@example.com'),
+('Daniela', 'Silva', '55668822', '852-321-654', 'daniela.silva@example.com'),
+('Hector', 'Vega', '99882211', '258-147-369', 'hector.vega@example.com'),
+('Natalia', 'Rojas', '11228899', '321-456-852', 'natalia.rojas@example.com'),
+('Gustavo', 'Paredes', '33445577', '654-789-951', 'gustavo.paredes@example.com'),
+('Karina', 'Luna', '66778844', '147-258-963', 'karina.luna@example.com'),
+('Fabian', 'Mora', '88991122', '951-123-456', 'fabian.mora@example.com'),
+('Isabel', 'Flores', '22334466', '369-852-147', 'isabel.flores@example.com'),
+('Victor', 'Suarez', '55667799', '258-963-741', 'victor.suarez@example.com'),
+('Claudia', 'Navarro', '11223399', '789-654-123', 'claudia.navarro@example.com'),
+('Jorge', 'Palacios', '33445588', '852-369-741', 'jorge.palacios@example.com'),
+('Monica', 'Lozano', '66778855', '963-852-147', 'monica.lozano@example.com');
+
+-- Insertar en clientes
+INSERT INTO clientes (id_persona, codigo, cuil) VALUES
+(1, 'CLI-001', '20-12345678-1'),
+(2, 'CLI-002', '20-87654321-2'),
+(3, 'CLI-003', '20-11223344-3'),
+(4, 'CLI-004', '20-44332211-4'),
+(5, 'CLI-005', '20-55667788-5'),
+(6, 'CLI-006', '20-99887766-6'),
+(7, 'CLI-007', '20-66554433-7'),
+(8, 'CLI-008', '20-33221144-8'),
+(9, 'CLI-009', '20-77441122-9'),
+(10, 'CLI-010', '20-22334455-0');
+
+-- Insertar en vendedores
+INSERT INTO vendedores (id_persona, codigo, sucursal, cuit) VALUES
+(11, 'VEN-011', 'Sucursal Centro', '27-88776655-1'),
+(12, 'VEN-012', 'Sucursal Norte', '27-11224488-2'),
+(13, 'VEN-013', 'Sucursal Sur', '27-33445566-3'),
+(14, 'VEN-014', 'Sucursal Este', '27-55667744-4'),
+(15, 'VEN-015', 'Sucursal Oeste', '27-22334477-5'),
+(16, 'VEN-016', 'Sucursal Centro', '27-66778899-6'),
+(17, 'VEN-017', 'Sucursal Norte', '27-88997766-7'),
+(18, 'VEN-018', 'Sucursal Sur', '27-11223377-8'),
+(19, 'VEN-019', 'Sucursal Este', '27-33441155-9'),
+(20, 'VEN-020', 'Sucursal Oeste', '27-55668822-0');
+
+-- Insertar en proveedores
+INSERT INTO proveedores (id_persona, codigo, nombre_fantasia, cuit) VALUES
+(11, 'PROV-001', 'Fantasia Uno', '30-12345678-5'),
+(22, 'PROV-002', 'Fantasia Dos', '30-87654321-3'),
+(23, 'PROV-003', 'Fantasia Tres', '30-11223344-2'),
+(24, 'PROV-004', 'Fantasia Cuatro', '30-44332211-1'),
+(25, 'PROV-005', 'Fantasia Cinco', '30-55667788-6'),
+(26, 'PROV-006', 'Fantasia Seis', '30-99887766-7'),
+(27, 'PROV-007', 'Fantasia Siete', '30-66554433-8'),
+(28, 'PROV-008', 'Fantasia Ocho', '30-33221144-9'),
+(29, 'PROV-009', 'Fantasia Nueve', '30-77441122-0'),
+(30, 'PROV-010', 'Fantasia Diez', '30-22334455-5');
+
+-- Insertar en categorías
+INSERT INTO categorias (codigo, categoria, tipo) VALUES
+('CAT-001', 'Bicicletas', 'BICICLETA'),
+('CAT-002', 'Accesorios', 'ACCESORIO'),
+('CAT-003', 'Repuestos', 'RESPUESTO'),
+('CAT-004', 'Deporte', 'ACCESORIO'),
+('CAT-005', 'Herramientas', 'RESPUESTO'),
+('CAT-006', 'Ropa', 'ACCESORIO'),
+('CAT-007', 'Protección', 'ACCESORIO'),
+('CAT-008', 'Neumáticos', 'RESPUESTO'),
+('CAT-009', 'Llantas', 'RESPUESTO'),
+('CAT-010', 'Equipos', 'ACCESORIO');
+
+-- Insertar en marcas
+INSERT INTO marcas (codigo, marca) VALUES
+('MAR-001', 'Marca Uno'),
+('MAR-002', 'Marca Dos'),
+('MAR-003', 'Marca Tres'),
+('MAR-004', 'Marca Cuatro'),
+('MAR-005', 'Marca Cinco'),
+('MAR-006', 'Marca Seis'),
+('MAR-007', 'Marca Siete'),
+('MAR-008', 'Marca Ocho'),
+('MAR-009', 'Marca Nueve'),
+('MAR-010', 'Marca Diez');
+
+-- Insertar en modelos
+INSERT INTO modelos (codigo_marca, codigo, modelo, descripcion, rodado) VALUES
+('MAR-001', 'MOD-001', 'Modelo Uno', 'Descripción del modelo uno', 'Rodado24'),
+('MAR-002', 'MOD-002', 'Modelo Dos', 'Descripción del modelo dos', 'Rodado27'),
+('MAR-003', 'MOD-003', 'Modelo Tres', 'Descripción del modelo tres', 'Rodado29'),
+('MAR-004', 'MOD-004', 'Modelo Cuatro', 'Descripción del modelo cuatro', 'Rodado30'),
+('MAR-005', 'MOD-005', 'Modelo Cinco', 'Descripción del modelo cinco', 'Rodado24'),
+('MAR-006', 'MOD-006', 'Modelo Seis', 'Descripción del modelo seis', 'Rodado29'),
+('MAR-007', 'MOD-007', 'Modelo Siete', 'Descripción del modelo siete', 'Rodado27'),
+('MAR-008', 'MOD-008', 'Modelo Ocho', 'Descripción del modelo ocho', 'Rodado30'),
+('MAR-009', 'MOD-009', 'Modelo Nueve', 'Descripción del modelo nueve', 'Rodado24'),
+('MAR-010', 'MOD-010', 'Modelo Diez', 'Descripción del modelo diez', 'Rodado24');
+
+-- Insertar en productos
+INSERT INTO productos (codigo_categoria, codigo_modelo, codigo_proveedor, codigo_marca, codigo, cantidad, nombre, descripcion, precio, path_imagen) VALUES
+('CAT-001', 'MOD-001', 'PROV-001', 'MAR-001', 'PRO-001', 100, 'Producto Uno', 'Descripción del producto uno', 1500.50, 'imagen1.jpg'),
+('CAT-002', 'MOD-002', 'PROV-002', 'MAR-002', 'PRO-002', 200, 'Producto Dos', 'Descripción del producto dos', 2500.00, 'imagen2.jpg'),
+('CAT-003', 'MOD-003', 'PROV-003', 'MAR-003', 'PRO-003', 300, 'Producto Tres', 'Descripción del producto tres', 3500.75, 'imagen3.jpg'),
+('CAT-004', 'MOD-004', 'PROV-004', 'MAR-004', 'PRO-004', 400, 'Producto Cuatro', 'Descripción del producto cuatro', 4500.00, 'imagen4.jpg'),
+('CAT-005', 'MOD-005', 'PROV-005', 'MAR-005', 'PRO-005', 500, 'Producto Cinco', 'Descripción del producto cinco', 5500.25, 'imagen5.jpg'),
+('CAT-006', 'MOD-006', 'PROV-006', 'MAR-006', 'PRO-006', 600, 'Producto Seis', 'Descripción del producto seis', 6500.50, 'imagen6.jpg'),
+('CAT-007', 'MOD-007', 'PROV-007', 'MAR-007', 'PRO-007', 700, 'Producto Siete', 'Descripción del producto siete', 7500.75, 'imagen7.jpg'),
+('CAT-008', 'MOD-008', 'PROV-008', 'MAR-008', 'PRO-008', 800, 'Producto Ocho', 'Descripción del producto ocho', 8500.00, 'imagen8.jpg'),
+('CAT-009', 'MOD-009', 'PROV-009', 'MAR-009', 'PRO-009', 900, 'Producto Nueve', 'Descripción del producto nueve', 9500.25, 'imagen9.jpg'),
+('CAT-010', 'MOD-010', 'PROV-010', 'MAR-010', 'PRO-010', 1000, 'Producto Diez', 'Descripción del producto diez', 10500.50, 'imagen10.jpg');
+
+-- Insertar en Pedido
+INSERT INTO Pedido (fecha, codigo_vendedor, codigo_cliente, codigo, estado, total_pedido) VALUES
+('2024-11-19', 'VEN-013', 'CLI-002', 'PED-1', 'PREPARACION', 10291.47),
+('2024-11-19', 'VEN-014', 'CLI-003', 'PED-2', 'CANCELADO', 8500.30),
+('2024-11-19', 'VEN-015', 'CLI-004', 'PED-3', 'ENTREGADO', 12000.00),
+('2024-11-19', 'VEN-016', 'CLI-005', 'PED-4', 'PREPARACION', 7560.25),
+('2024-11-19', 'VEN-017', 'CLI-006', 'PED-5', 'ENTREGADO', 4320.75),
+('2024-11-19', 'VEN-018', 'CLI-007', 'PED-6', 'CANCELADO', 9800.40),
+('2024-11-19', 'VEN-019', 'CLI-008', 'PED-7', 'PREPARACION', 6785.60),
+('2024-11-19', 'VEN-020', 'CLI-009', 'PED-8', 'ENTREGADO', 11000.10),
+('2024-11-19', 'VEN-011', 'CLI-010', 'PED-9', 'CANCELADO', 8950.00),
+('2024-11-19', 'VEN-012', 'CLI-001', 'PED-10', 'PREPARACION', 7400.45),
+('2024-11-19', 'VEN-013', 'CLI-002', 'PED-11', 'ENTREGADO', 10250.00),
+('2024-11-19', 'VEN-014', 'CLI-003', 'PED-12', 'CANCELADO', 9300.50),
+('2024-11-19', 'VEN-015', 'CLI-004', 'PED-13', 'PREPARACION', 8500.75),
+('2024-11-19', 'VEN-016', 'CLI-005', 'PED-14', 'ENTREGADO', 9450.30),
+('2024-11-19', 'VEN-017', 'CLI-006', 'PED-15', 'PREPARACION', 11900.00),
+('2024-11-19', 'VEN-018', 'CLI-007', 'PED-16', 'ENTREGADO', 7680.25),
+('2024-11-19', 'VEN-019', 'CLI-008', 'PED-17', 'CANCELADO', 4530.60),
+('2024-11-19', 'VEN-020', 'CLI-009', 'PED-18', 'ENTREGADO', 8795.40),
+('2024-11-19', 'VEN-011', 'CLI-010', 'PED-19', 'PREPARACION', 10900.75),
+('2024-11-19', 'VEN-012', 'CLI-001', 'PED-20', 'CANCELADO', 9720.90);
+
+-- Insertar en detalle_pedido
+INSERT INTO detalle_pedido (codigo_pedido, codigo_producto, cantidad, precio) VALUES
+('PED-1', 'PRO-001', 1, 1500.50),
+('PED-1', 'PRO-002', 2, 1470.49),
+('PED-2', 'PRO-003', 3, 2000.00),
+('PED-2', 'PRO-004', 1, 1700.25),
+('PED-3', 'PRO-005', 2, 3400.75),
+('PED-3', 'PRO-006', 1, 2500.00),
+('PED-4', 'PRO-007', 4, 1200.50),
+('PED-4', 'PRO-008', 2, 1560.60),
+('PED-5', 'PRO-009', 1, 2100.75),
+('PED-5', 'PRO-010', 3, 1100.40),
+('PED-6', 'PRO-001', 2, 980.50),
+('PED-6', 'PRO-002', 1, 1600.30),
+('PED-7', 'PRO-003', 1, 3400.00),
+('PED-7', 'PRO-004', 2, 1750.25),
+('PED-8', 'PRO-005', 3, 3200.75),
+('PED-8', 'PRO-006', 1, 2550.50),
+('PED-9', 'PRO-007', 2, 1400.60),
+('PED-9', 'PRO-008', 4, 1290.90),
+('PED-10', 'PRO-009', 1, 2200.75),
+('PED-10', 'PRO-010', 2, 1800.00);
